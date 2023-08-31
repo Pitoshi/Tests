@@ -1,0 +1,1588 @@
+{
+	"info": {
+		"_postman_id": "6d7640d7-a72a-47bf-b4da-76ef0a538adf",
+		"name": "Testing \"TravelLine tests\"",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Тест на получение успешного соединение с API (автотест)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"    console.log(response.json());",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "9bfa7f1b-410e-45bd-a496-ec100f39d041",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200",
+					"protocol": "https",
+					"host": [
+						"partner",
+						"qatl",
+						"ru"
+					],
+					"path": [
+						"api",
+						"content",
+						"v1",
+						"properties"
+					],
+					"query": [
+						{
+							"key": "since",
+							"value": "UlUtNDE5NQ%3D%3D"
+						},
+						{
+							"key": "count",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "6debb06c-08ff-4d2d-a4e1-4fc29b0b4174",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Отправка некорректных запросов",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "34100d16-a6fe-4b44-ba7b-d771fb0249dc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"url": "https://partner.qatl.ru/api/content/v1/properties/s-835"
+			},
+			"response": [
+				{
+					"id": "c6a0422d-2756-4f62-a125-d3116b6091dd",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Отправка некорректных запросов (автотест)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});",
+							"",
+							"pm.test(\"Hotels list\", function(){",
+							"    const getData = pm.response.json()",
+							"",
+							"    pm.expect(getData.properties[110].id).to.eql(\"8s8\");",
+							"    ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "91fac1f0-4fc2-481c-9daf-249f25d42a1f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200",
+					"protocol": "https",
+					"host": [
+						"partner",
+						"qatl",
+						"ru"
+					],
+					"path": [
+						"api",
+						"content",
+						"v1",
+						"properties"
+					],
+					"query": [
+						{
+							"key": "since",
+							"value": "UlUtNDE5NQ%3D%3D"
+						},
+						{
+							"key": "count",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "cfce0018-6186-4558-8c57-4256d9f9d1d8",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Получение информации об отелях",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							"pm.test(\"Hotels list\", function(){",
+							"    const getData = pm.response.json()",
+							"",
+							"    pm.expect(getData.properties[1].id).to.eql(\"7291\");",
+							"    ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "4a414174-68fa-4c0a-bb07-116360fbe64e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+					"protocol": "https",
+					"host": [
+						"partner",
+						"qatl",
+						"ru"
+					],
+					"path": [
+						"api",
+						"content",
+						"v1",
+						"properties"
+					],
+					"query": [
+						{
+							"key": "since",
+							"value": "UlUtNDE5NQ%3D%3D"
+						},
+						{
+							"key": "count",
+							"value": "200"
+						},
+						{
+							"key": "include",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "2aa329a1-dbb6-4e9a-8a16-58679fa15017",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Выбор определенного отеля",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "1f505c18-24ec-4f48-9c28-f0c706818359",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": "https://partner.qatl.ru/api/content/v1/properties/7291"
+			},
+			"response": [
+				{
+					"id": "8f2ff238-5407-45f5-ab91-e5c867a8d9bd",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Выбор по id (автотест)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							"pm.test(\"Hotels list\", function(){",
+							"    const getData = pm.response.json()",
+							"",
+							"    pm.expect(getData.properties[1].id).to.eql(\"7291\");",
+							"    ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "03b682f1-d44d-4cca-866e-a744176d1e0d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+					"protocol": "https",
+					"host": [
+						"partner",
+						"qatl",
+						"ru"
+					],
+					"path": [
+						"api",
+						"content",
+						"v1",
+						"properties"
+					],
+					"query": [
+						{
+							"key": "since",
+							"value": "UlUtNDE5NQ%3D%3D"
+						},
+						{
+							"key": "count",
+							"value": "200"
+						},
+						{
+							"key": "include",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "bb666207-30ee-4f71-9d52-cd2d7c1db11d",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Проверка на отсутствие возвращения \"0\" в значениях имеющие содержание (автотест)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							"pm.test(\"Test absent Null\", function(){",
+							"    const getData = pm.response.json();",
+							"    pm.expect(getData.images).not.equal(null)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "cc5ce80f-5aec-453d-a5a7-3712c4ee37bc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": "https://partner.qatl.ru/api/content/v1/properties/7291"
+			},
+			"response": [
+				{
+					"id": "a0608776-3282-4005-8ac7-d1f51550346b",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Возможность получении списков по параметрам (автотест)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							"",
+							"pm.test(\"data test\", function(){",
+							"    const getData = pm.response.json()",
+							"",
+							"    pm.expect(getData).to.have.property(\"id\");",
+							"    pm.expect(getData).to.have.property(\"name\");",
+							"    pm.expect(getData).to.have.property(\"currency\");",
+							"    pm.expect(getData).to.have.property(\"stars\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "6857c065-7cb6-4687-a52a-57709f2034e9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": "https://partner.qatl.ru/api/content/v1/properties/8868"
+			},
+			"response": [
+				{
+					"id": "af8bd5d6-90fa-4701-b973-563b1f6972fb",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Время выполнение запросов (автотест)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							"",
+							"pm.test(\"Response time is less than 500 ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "b7956753-c732-45d1-9712-8987b63ecb66",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+					"protocol": "https",
+					"host": [
+						"partner",
+						"qatl",
+						"ru"
+					],
+					"path": [
+						"api",
+						"content",
+						"v1",
+						"properties"
+					],
+					"query": [
+						{
+							"key": "since",
+							"value": "UlUtNDE5NQ%3D%3D"
+						},
+						{
+							"key": "count",
+							"value": "200"
+						},
+						{
+							"key": "include",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "2f6d50f9-6204-4001-a2ea-207a2ee448d1",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Получение информации о доступных типах комнат",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "b1ff4f7f-261e-4449-a629-d0409ad03596",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": "https://partner.qatl.ru/api/content/v1/room-type-categories"
+			},
+			"response": [
+				{
+					"id": "442ce8d3-9ddb-4f03-b773-cd5fc5030d34",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Получение информации о вариантах питания",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "61d07cfc-262e-4aef-a25c-5feeea351e1b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": "https://partner.qatl.ru/api/content/v1/meal-plans"
+			},
+			"response": [
+				{
+					"id": "e44bd329-8c39-42c5-82b9-d2b8a89c2d0d",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Получение информации об удобствах в номерах",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0f14aa29-72ff-4b22-b183-74897f17c5ed",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "b697a43c-1a94-4236-9f9a-36dbe8505305",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"insecureHTTPParser": false,
+				"disableCookies": true,
+				"tlsPreferServerCiphers": true,
+				"removeRefererHeaderOnRedirect": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "47306034-78fc-4767-bfd9-25e78825b985",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": "https://partner.qatl.ru/api/content/v1/room-amenity-categories"
+			},
+			"response": [
+				{
+					"id": "641eff2d-afec-48bc-8317-3fb6b5bfa0cb",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://partner.qatl.ru/api/content/v1/properties?since=UlUtNDE5NQ%3D%3D&count=200&include=all",
+							"protocol": "https",
+							"host": [
+								"partner",
+								"qatl",
+								"ru"
+							],
+							"path": [
+								"api",
+								"content",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "UlUtNDE5NQ%3D%3D"
+								},
+								{
+									"key": "count",
+									"value": "200"
+								},
+								{
+									"key": "include",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Aug 2023 22:11:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Request-ID",
+							"value": "b4a6b95e-b63c-4fb9-b9af-986801043506"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Unauthorized\"\n}"
+				}
+			]
+		}
+	]
+}
